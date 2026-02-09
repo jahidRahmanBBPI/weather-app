@@ -27,6 +27,10 @@ Route::get("/form",[OstadController::class, 'sampleGetRequest']);
 
 Route::get('/location', [WeatherController::class, 'location']);
 
-Route::get('/weather/{location}/country/{country?}', [WeatherController::class, 'weather']);
+// Route::get('/weather/{location}/country/{country?}', [WeatherController::class, 'weather']);
+Route::get('/weather/{location}', [WeatherController::class, 'weather']);
 
 Route::get('/form', [OstadController::class, 'testParmeters']);
+
+// Route redirect
+Route::redirect('/myhome','/');

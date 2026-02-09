@@ -34,7 +34,8 @@ class WeatherController extends Controller
         return view("lc",['location'=>$location, 'seasons'=>$seasons]);
     }
 
-    function weather($location, $country){
+    // function weather($location, $country){
+    function weather($location){
         $response = Http::timeout(20)->retry(3, 2000)->get("https://wttr.in/{$location}?format=j1");
         // $response = Http::retry(3, 2000)->get("https://wttr.in/{$location}?format=j1");
 
