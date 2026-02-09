@@ -33,4 +33,8 @@ Route::get('/weather/{location}', [WeatherController::class, 'weather']);
 Route::get('/form', [OstadController::class, 'testParmeters']);
 
 // Route redirect
-Route::redirect('/myhome','/');
+// Route::redirect('/myhome','/');
+Route::redirect('/myhome','/', $status = 301); // Permanent Redirection.
+
+// View return form route.
+Route::view('/test', 'Test');
