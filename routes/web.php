@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\OstadController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\WeatherController;
 use Illuminate\Support\Facades\Route;
@@ -78,7 +79,14 @@ Route::redirect('/myhome','/', $status = 301); // Permanent Redirection.
 // });
 
 
-Route::get('/test/{id}', [TestController::class, 'test'])->name('user');
-Route::get('/post', function(){
-    return "Post page";
-})->name('post');
+// Route::get('/test/{id}', [TestController::class, 'test'])->name('user');
+// Route::get('/post', function(){
+//     return "Post page";
+// })->name('post');
+
+// Route::get('/profile', [ProfileController::class, 'index']);
+// Route::post('/profile', [ProfileController::class, 'store'])->withoutMiddleware([ValidateCsrfToken::class]);
+
+Route::post('/user', [ProfileController::class, 'user']);
+
+Route::get('/admin',[ProfileController::class, 'new']);
